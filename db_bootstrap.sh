@@ -12,3 +12,5 @@ sudo yum -y install httpd
 sudo echo "This is the db server" >> /var/www/html/index.html
 sudo systemctl start httpd
 sudo systemctl enable httpd
+sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
+sudo firewall-cmd --reload
