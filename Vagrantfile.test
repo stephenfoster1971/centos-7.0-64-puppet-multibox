@@ -1,4 +1,4 @@
-Vagrant.configure("2") do |config|
+Vagrant.configure("3") do |config|
   config.vm.box = "puppetlabs/centos-7.0-64-puppet"
 
   config.vm.define "web" do |web|
@@ -20,7 +20,6 @@ Vagrant.configure("2") do |config|
     spacewalk.vm.network "private_network", ip: "192.168.100.4"
     spacewalk.vm.provision :shell, path: "spacewalk_bootstrap.sh"
     spacewalk.vm.network :forwarded_port, guest: 80, host: 8082
-    spacewalk.vm.network :forwarded_port, guest: 443, host: 8443
   end
 
 end
